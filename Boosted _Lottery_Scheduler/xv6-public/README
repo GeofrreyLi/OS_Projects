@@ -49,3 +49,9 @@ will need to install a cross-compiler gcc suite capable of producing
 x86 ELF binaries (see https://pdos.csail.mit.edu/6.828/).
 Then run "make TOOLPREFIX=i386-jos-elf-". Now install the QEMU PC
 simulator and run "make qemu".
+
+#ADD
+This is a implentation of lottery scheduling which is cited as "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-lottery.pdf"  
+1. At each tick, the scheduler holds a lottery between runnable processes and schedules the winner.  
+2. If a process is blocked and unable to participate in the lottery for x ticks, its tickets would be doubled for the next x lotteries.  
+3. Improve the sleep/wakeup mechanism of xv6 so processes are unblocked only after their sleep interval has expired instead of every tick.  
